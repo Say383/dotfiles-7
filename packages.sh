@@ -31,7 +31,7 @@ export REPO=(
   # lxappearance #
   # mariadb #
   # mupdf #
-  # nitrogen
+  nitrogen
   neofetch
   maven
   numlockx

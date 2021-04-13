@@ -562,3 +562,22 @@ end)
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
+
+-- Autostart Applications
+awful.spawn.with_shell("picom")
+awful.spawn.with_shell("nitrogen --restore")
+awful.spawn.with_shell("numlockx on")
+awful.spawn.with_shell("setxkbmap -option ctrl:nocaps")
+awful.spawn.with_shell("xcape -e 'Control_L=Escape'")
+awful.spawn.with_shell("~/.spells/i3wm/naturalScrollOn.sh")
+awful.spawn.with_shell("exec xrandr --output HDMI1 --auto --right-of eDP1")
+awful.spawn.with_shell("exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
+awful.spawn.with_shell("exec --no-startup-id xfce4-power-manager")
+awful.spawn.with_shell("exec --no-startup-id pamac-tray")
+awful.spawn.with_shell("exec --no-startup-id blueman-applet")
+awful.spawn.with_shell("exec --no-startup-id flameshot")
+awful.spawn.with_shell("exec --no-startup-id nm-applet")
+awful.spawn.with_shell("exec --no-startup-id redshift -l 41:-8 -t 5700:3600")
+awful.spawn.with_shell("exec --no-startup-id volumeicon")
+awful.spawn.with_shell("exec --no-startup-id clipit")
+-- }}}
