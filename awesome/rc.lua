@@ -333,12 +333,12 @@ globalkeys = gears.table.join(
 )
 
 clientkeys = gears.table.join(
-    awful.key({ modkey,           }, "f",
-        function (c)
-            c.fullscreen = not c.fullscreen
-            c:raise()
-        end,
-        {description = "toggle fullscreen", group = "client"}),
+    -- awful.key({ modkey,          }, "f",
+    --     function (c)
+    --         c.fullscreen = not c.fullscreen
+    --         c:raise()
+    --     end,
+    --     {description = "toggle fullscreen", group = "client"}),
     awful.key({ modkey, "Shift"   }, "c",      function (c) c:kill()                         end,
               {description = "close", group = "client"}),
     awful.key({ modkey, "Control" }, "space",  awful.client.floating.toggle                     ,
@@ -356,19 +356,19 @@ clientkeys = gears.table.join(
             c.minimized = true
         end ,
         {description = "minimize", group = "client"}),
-    awful.key({ modkey,           }, "m",
+    awful.key({ modkey,           }, "f",
         function (c)
             c.maximized = not c.maximized
             c:raise()
         end ,
         {description = "(un)maximize", group = "client"}),
-    awful.key({ modkey, "Control" }, "m",
+    awful.key({ modkey, "Control" }, "f",
         function (c)
             c.maximized_vertical = not c.maximized_vertical
             c:raise()
         end ,
         {description = "(un)maximize vertically", group = "client"}),
-    awful.key({ modkey, "Shift"   }, "m",
+    awful.key({ modkey, "Shift"   }, "f",
         function (c)
             c.maximized_horizontal = not c.maximized_horizontal
             c:raise()
@@ -496,9 +496,12 @@ awful.rules.rules = {
       }, properties = { titlebars_enabled = true }
     },
 
-    -- Set Firefox to always map on the tag named "2" on screen 1.
-    -- { rule = { class = "Firefox" },
-    --   properties = { screen = 1, tag = "2" } },
+    -- Set Firefox to always map on the tag named "2".
+    { rule = { class = "firefoxdeveloperedition" },
+      properties = { tag = "3" } },
+
+    { rule = {class = "Slack"},
+    properties = {screen = 2, tag = "1"}}
 }
 -- }}}
 
